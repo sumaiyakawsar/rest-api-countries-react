@@ -1,6 +1,6 @@
 # Frontend Mentor - REST Countries API with color theme switcher solution
  
-
+[![wakatime](https://wakatime.com/badge/github/sumaiyakawsar/rest-api-countries-react.svg)](https://wakatime.com/badge/github/sumaiyakawsar/rest-api-countries-react)
 
 <div align="center">
   <h3>
