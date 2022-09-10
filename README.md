@@ -4,11 +4,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://sumaiyakawsar.github.io/FrontendMentorsChallenges/Projects/qr-code-component-project/">
+    <a href="https://sumaiyakawsar.github.io/rest-api-countries-react/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/sumaiyakawsar/FrontendMentorsChallenges/tree/main/Projects/qr-code-component-project">
+    <a href="https://github.com/sumaiyakawsar/rest-api-countries-react">
       Solution
     </a>
     <span> | </span>

@@ -17,7 +17,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Countries />} exact/>
+          <Route path="/rest-api-countries-react" element={<Countries />} exact/>
           <Route path="/countries/:countryName" element={<Country />} />
         </Routes>
 

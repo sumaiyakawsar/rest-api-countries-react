@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container flex justify-between items-center w-4/5 mx-auto my-0 py-4">
         {/* Main Brand */}
         <Link
-          to="/"
+          to="/rest-api-countries-react"
           className="font-extrabold text-md text-[#111517] dark:text-white"
         >
           Where in the world?

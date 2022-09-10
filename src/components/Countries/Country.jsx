@@ -61,7 +61,7 @@ const Country = () => {
         <div className="py-8">
           <button>
             <Link
-              to="/"
+              to="/rest-api-countries-react"
               className="bg-neutral-50 dark:bg-[#2b3945] flex items-center shadow-md gap-4 px-4 py-2 "
             >
               <BiArrowBack />
