@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { baseURL } from "../../api/api";
 import Loading from "../../utils/Loading";
 import Error from "../../utils/Error";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -88,7 +89,8 @@ const Countries = () => {
             <Link to={`/countries/${country.name.common}`} key={id}>
               <div className="card rounded-md overflow-hidden flex flex-col flex-nowrap shadow-lg h-full dark:bg-[#2b3945] max-h-full">
                 <div className="country__img flex-1 ">
-                  <img
+               
+                  <LazyLoadImage
                     src={country.flags.svg}
                     alt={country.name.common}
                     className="country__img w-full h-full object-cover rounded-sm "
@@ -118,7 +120,7 @@ const Countries = () => {
                     <span className="text-sm font-light ml-1">
                       {country.capital !== undefined
                         ? Object.values(country.capital).join(", ")
-                        :"No capital info"}
+                        : "No capital info"}
                     </span>
                   </p>
                 </div>

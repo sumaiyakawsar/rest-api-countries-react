@@ -6,6 +6,7 @@ import { BiArrowBack } from "react-icons/bi";
 
 import Loading from "../../utils/Loading";
 import Error from "../../utils/Error";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
@@ -94,7 +95,8 @@ const Country = () => {
               key={index}
             >
               <div className="country__info-img h-[350px]  ">
-                <img
+               
+                <LazyLoadImage
                   src={country.flags.svg}
                   alt={country.name.common}
                   className=" w-full h-full object-cover shadow-lg"
