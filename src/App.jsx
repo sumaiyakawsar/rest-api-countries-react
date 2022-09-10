@@ -14,7 +14,7 @@ import ScrollToTop from "react-scroll-to-top";
 function App() {
   return (
     <ThemeProvider>
-      <section className="flex flex-col flex-1  justify-between h-full bg-neutral-50 dark:bg-[#202c37] text-[#111517]  dark:text-white">
+      <main className="flex flex-col flex-1  justify-between h-full bg-neutral-50 dark:bg-[#202c37] text-[#111517]  dark:text-white">
         <Header />
 
         <Routes>
@@ -32,7 +32,7 @@ function App() {
           component={<AiOutlineArrowUp />}
         />
         <Footer />
-      </section>
+      </main>
     </ThemeProvider>
   );
 }
