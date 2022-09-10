@@ -53,7 +53,7 @@ Users should be able to:
 
 ### What I learned
 
-- How to get the nested element from an API
+- How to get the nested data from the API
 - Real-time search (debounced)
 - Handled some problematic pages with some missing info (eg: Antarctica)
 - Sort alphabetically
