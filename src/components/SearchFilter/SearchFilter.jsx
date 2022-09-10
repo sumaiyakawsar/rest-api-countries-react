@@ -28,7 +28,7 @@ const SearchFilter = ({ getCountryByName, onSelect, clearResults }) => {
             className="px-3 py-2 bg-neutral-50 text-sm cursor-pointer rounded-md dark:bg-[#2b3945] "
             name="regions"
           >
-            <option hidden selected>
+            <option hidden >
               Filter By Region
             </option>
 

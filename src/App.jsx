@@ -23,7 +23,10 @@ function App() {
             element={<Countries />}
             exact
           />
-          <Route path="/countries/:countryName" element={<Country />} />
+          <Route
+            path="/rest-api-countries-react/countries/:countryName"
+            element={<Country />}
+          />
         </Routes>
 
         <ScrollToTop

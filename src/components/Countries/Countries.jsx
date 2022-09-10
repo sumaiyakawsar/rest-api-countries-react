@@ -86,14 +86,16 @@ const Countries = () => {
 
         {!error &&
           countries?.map((country, id) => (
-            <Link to={`/countries/${country.name.common}`} key={id}>
+            <Link
+              to={`/rest-api-countries-react/countries/${country.cca3}`}
+              key={id}
+            >
               <div className="card rounded-md overflow-hidden flex flex-col flex-nowrap shadow-lg h-full dark:bg-[#2b3945] max-h-full">
-                <div className="country__img flex-1 ">
-               
+                <div className="country__img flex-1">
                   <LazyLoadImage
                     src={country.flags.svg}
                     alt={country.name.common}
-                    className="country__img w-full h-full object-cover rounded-sm "
+                    className="country__img w-full  h-[150px] object-cover rounded-sm "
                   />
                 </div>
 

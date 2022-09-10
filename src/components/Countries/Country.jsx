@@ -19,12 +19,12 @@ const Country = () => {
   useEffect(() => {
     const getCountryByName = async () => {
       try {
-        const countryRes = await Axios.get(
-          `${baseURL}/name/${countryName}?fullText=true`
-        );
+        const countryRes = await Axios.get(`${baseURL}/alpha/${countryName}`);
 
         console.log("Country:::", countryRes.data);
+        
         setCountry(countryRes.data);
+
         if (countryRes.data[0].borders !== undefined) {
           getBorderCountryByName(countryRes.data[0].borders);
         }
@@ -40,18 +40,17 @@ const Country = () => {
   }, [countryName]);
 
   const getBorderCountryByName = async (borderName) => {
-    let borderCountries = [];
+    
     try {
       const bordersRes = await Axios.get(
         `${baseURL}/alpha?codes=${borderName.join(",")}`
       );
-      bordersRes.data.forEach((country) => {
-        borderCountries.push(country.name.common);
-      });
+      setBorderC(bordersRes.data);
+   
     } catch (error) {
       setError(error.message);
     }
-    setBorderC(borderCountries);
+ 
   };
 
   // console.log("borderC", borderC);
@@ -95,7 +94,6 @@ const Country = () => {
               key={index}
             >
               <div className="country__info-img h-[350px]  ">
-               
                 <LazyLoadImage
                   src={country.flags.svg}
                   alt={country.name.common}
@@ -107,7 +105,7 @@ const Country = () => {
                 <h2 className="font-bold text-lg ">{country.name.common}</h2>
                 <div className="more__info flex flex-col sm:flex-row gap-16 text-sm ">
                   <div className="info-left flex flex-col gap-2 ">
-                    <div className="font-bold  flex flex-wrap">
+                    <p className="font-bold  flex flex-wrap">
                       Native Name:
                       <span className="ml-1 ">
                         {country.name.nativeName !== undefined
@@ -123,17 +121,19 @@ const Country = () => {
                             )
                           : country.name.official}
                       </span>
-                    </div>
+                    </p>
                     <p className="font-bold">
                       Population:
                       <span className=" font-semibold dark:text-neutral-50/80 ml-1">
-                        {new Intl.NumberFormat().format(country.population)}
+                        {country.population !== undefined
+                          ? new Intl.NumberFormat().format(country.population)
+                          : "No Population info"}
                       </span>
                     </p>
                     <p className="font-bold">
                       Region:
                       <span className="dark:text-neutral-50/80  font-semibold ml-1">
-                        {country.region}
+                        {country.region ? country.region : "No region info"}
                       </span>
                     </p>
                     <p className="font-bold">
@@ -157,7 +157,9 @@ const Country = () => {
                     <p className="font-bold">
                       Top Level domain:
                       <span className="dark:text-neutral-50/80 font-semibold ml-1">
-                        {Object.values(country.tld).join(", ")}
+                        {country.tld !== undefined
+                          ? Object.values(country.tld).join(", ")
+                          : "No tld info"}
                       </span>
                     </p>
                     <p className="font-bold">
@@ -195,9 +197,12 @@ const Country = () => {
                     <h4 className="text-sm font-bold flex flex-wrap gap-4">
                       Border Countries:
                       {borderC?.map((border, id) => (
-                        <Link to={`/countries/${border}`} key={id}>
+                        <Link
+                          to={`/rest-api-countries-react/countries/${border.cca3}`}
+                          key={id}
+                        >
                           <span className="bg-neutral-50 dark:bg-[#2b3945] dark:text-neutral-50/80 font-semibold py-1 px-4 shadow-lg  rounded-md">
-                            {border}
+                            {border.name.common}
                           </span>
                         </Link>
                       ))}
