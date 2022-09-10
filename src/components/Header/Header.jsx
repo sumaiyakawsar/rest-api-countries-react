@@ -8,9 +8,9 @@ const Header = () => {
         {/* Main Brand */}
         <Link
           to="/rest-api-countries-react"
-          className="font-extrabold text-md text-[#111517] dark:text-white"
+          className="font-extrabold text-sm text-[#111517] dark:text-white"
         >
-          Where in the world?
+         <h1> Where in the world?</h1>
         </Link>
 
         {/* Switch Theme */}

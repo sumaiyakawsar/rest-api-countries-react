@@ -96,11 +96,11 @@ const Countries = () => {
                 </div>
 
                 <div className="country__info p-4">
-                  <h3 className="font-bold text-sm pb-4">
+                  <h2 className="font-bold text-sm pb-4">
                     {country.name.common.length < 25
                       ? `${country.name.common}`
                       : `${country.name.common.substring(0, 25)}...`}
-                  </h3>
+                  </h2>
                   <p className="text-base font-medium">
                     Population:
                     <span className="text-sm font-light ml-1">
