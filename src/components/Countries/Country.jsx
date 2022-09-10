@@ -62,7 +62,7 @@ const Country = () => {
           <button>
             <Link
               to="/rest-api-countries-react"
-              className="bg-neutral-50 dark:bg-[#2b3945] flex items-center shadow-md gap-4 px-4 py-2 "
+              className="bg-neutral-50 dark:bg-[#2b3945] flex items-center shadow-md gap-4 px-4 py-2 rounded-md"
             >
               <BiArrowBack />
               Back
@@ -194,7 +194,7 @@ const Country = () => {
                       Border Countries:
                       {borderC?.map((border, id) => (
                         <Link to={`/countries/${border}`} key={id}>
-                          <span className="bg-neutral-50 dark:bg-[#2b3945] dark:text-neutral-50/80 font-semibold py-1 px-4 shadow-lg  ">
+                          <span className="bg-neutral-50 dark:bg-[#2b3945] dark:text-neutral-50/80 font-semibold py-1 px-4 shadow-lg  rounded-md">
                             {border}
                           </span>
                         </Link>

@@ -80,7 +80,7 @@ const Countries = () => {
       />
       {loading && !error && <Loading />}
       {error && !loading && <Error error={error} />}
-      <div className="container grid grid-cols-1 sm:grid-cols-2 justify-center md:grid-cols-3 lg:grid-cols-4 gap-10  w-4/5 mx-auto my-0">
+      <div className="countries-container container grid grid-cols-1 sm:grid-cols-2 justify-center md:grid-cols-3 lg:grid-cols-4 gap-10  w-4/5 mx-auto my-0">
         {/* Each country with Population, Region and Capital City */}
 
         {!error &&
